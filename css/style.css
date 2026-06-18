@@ -1,0 +1,343 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#000;
+    color:#fff;
+    height:100vh;
+}
+
+.login-container{
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+}
+
+.logo-area{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo-area h1{
+    color:#f0b454;
+    margin-bottom:10px;
+}
+
+.logo-area p{
+    color:#888;
+}
+
+.login-card{
+
+    width:100%;
+    max-width:420px;
+
+    background:#0d0d0d;
+
+    border:1px solid #1a1a2e;
+
+    border-radius:20px;
+
+    padding:30px;
+}
+
+.login-card h2{
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.login-card label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+}
+
+.login-card input{
+
+    width:100%;
+
+    background:#111;
+
+    border:1px solid #1a1a2e;
+
+    color:white;
+
+    padding:14px;
+
+    border-radius:10px;
+}
+
+.login-card input:focus{
+    outline:none;
+    border-color:#f0b454;
+}
+
+.login-card button{
+
+    width:100%;
+
+    margin-top:25px;
+
+    background:#f0b454;
+
+    color:black;
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.login-card button:hover{
+    transform:translateY(-2px);
+}
+
+.dashboard{
+    display:flex;
+    min-height:100vh;
+}
+
+.sidebar{
+
+    width:250px;
+
+    background:#0d0d0d;
+
+    border-right:1px solid #1a1a2e;
+
+    padding:25px;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.sidebar h2{
+    color:#f0b454;
+    margin-bottom:30px;
+}
+
+.sidebar nav{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.sidebar a{
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.sidebar a:hover{
+    background:#f0b454;
+    color:black;
+}
+
+.sidebar button{
+
+    margin-top:auto;
+
+    background:#f0b454;
+
+    border:none;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+}
+
+.content{
+    flex:1;
+    padding:30px;
+}
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+}
+
+.card{
+
+    background:#0d0d0d;
+
+    border:1px solid #1a1a2e;
+
+    border-radius:15px;
+
+    padding:20px;
+}
+
+.card h3{
+    color:#f0b454;
+}
+
+.card p{
+
+    font-size:2rem;
+
+    margin-top:10px;
+}
+
+.welcome{
+
+    margin-top:30px;
+
+    background:#0d0d0d;
+
+    border:1px solid #1a1a2e;
+
+    border-radius:15px;
+
+    padding:20px;
+}
+
+.form-card{
+
+    background:#0d0d0d;
+
+    border:1px solid #1a1a2e;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+
+    margin-bottom:30px;
+}
+
+.form-card input,
+.form-card select{
+
+    background:#111;
+
+    color:white;
+
+    border:1px solid #1a1a2e;
+
+    padding:12px;
+
+    border-radius:10px;
+}
+
+.form-card button{
+
+    background:#f0b454;
+
+    color:black;
+
+    border:none;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+}
+
+.checkbox-group{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(150px,1fr));
+
+    gap:10px;
+}
+
+.professor-card{
+
+    background:#0d0d0d;
+
+    border:1px solid #1a1a2e;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    margin-top:15px;
+}
+
+#pesquisaProfessor{
+
+    width:100%;
+
+    background:#111;
+
+    color:white;
+
+    border:1px solid #1a1a2e;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    margin:15px 0 20px 0;
+}
+
+.acoes{
+
+    margin-top:15px;
+
+    display:flex;
+
+    gap:10px;
+}
+
+.acoes button{
+
+    flex:1;
+
+    padding:10px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+}

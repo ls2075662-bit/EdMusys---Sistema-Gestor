@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - Educação Musical</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <h2>🎵 Educação Musical</h2>
+
+        <nav>
+
+            <a href="admin.html">Dashboard</a>
+
+            <a href="professores.html">Professores</a>
+
+            <a href="alunos.html">Alunos</a>
+
+            <a href="matriculas.html">Matrículas</a>
+
+        </nav>
+
+        <button id="logoutBtn">
+            Sair
+        </button>
+
+    </aside>
+
+    <main class="content">
+
+        <header class="topbar">
+
+            <h1>Painel Administrativo</h1>
+
+            <span id="nomeAdmin"></span>
+
+        </header>
+
+        <section class="cards">
+
+            <div class="card">
+                <h3>Professores</h3>
+                <p id="totalProfessores">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Alunos</h3>
+                <p id="totalAlunos">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Matrículas</h3>
+                <p id="totalMatriculas">0</p>
+            </div>
+
+        </section>
+
+        <section class="welcome">
+
+            <h2>Bem-vindo ao sistema Educação Musical</h2>
+
+            <p>
+                Utilize o menu lateral para gerenciar professores, alunos e matrículas.
+            </p>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/admin.js"></script>
+
+</body>
+</html>

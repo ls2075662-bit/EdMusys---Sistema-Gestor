@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos - Educação Musical</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- MENU LATERAL -->
+     
+    <aside class="sidebar">
+        
+
+        <h2>🎵 Educação Musical</h2>
+
+        <nav>
+            <a href="admin.html">Dashboard</a>
+            <a href="professores.html">Professores</a>
+            <a href="alunos.html">Alunos</a>
+            <a href="matriculas.html">Matrículas</a>
+        </nav>
+
+        <button onclick="window.location.href='admin.html'">
+        ← Voltar ao Dashboard
+        </button>
+
+        <button id="logoutBtn">
+            Sair
+        </button>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="content">
+
+        <header class="topbar">
+            <h1>Cadastro de Alunos</h1>
+        </header>
+
+        <!-- FORMULÁRIO -->
+        <form id="alunoForm" class="form-card">
+
+            <h2>Dados do Aluno</h2>
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Nome Completo"
+                required
+            >
+
+            <input
+                type="text"
+                id="cpf"
+                placeholder="CPF"
+                required
+            >
+
+            <input
+                type="text"
+                id="telefone"
+                placeholder="Telefone"
+                required
+            >
+
+            <input
+                type="text"
+                id="responsavel"
+                placeholder="Nome do Responsável"
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="E-mail"
+                required
+            >
+
+            <input
+                type="password"
+                id="senha"
+                placeholder="Senha"
+                required
+            >
+
+            <button type="submit">
+                Salvar Aluno
+            </button>
+
+        </form>
+
+        <hr>
+
+        <!-- PESQUISA -->
+        <section>
+
+            <h2>Alunos Cadastrados</h2>
+
+            <input
+                type="text"
+                id="pesquisaAluno"
+                placeholder="Pesquisar por nome, CPF ou e-mail..."
+            >
+
+        </section>
+
+        <!-- LISTA DE ALUNOS -->
+        <section id="alunosLista">
+
+            <!--
+                Os cards serão inseridos automaticamente pelo JavaScript.
+
+                Exemplo:
+
+                João Pedro
+                CPF: 12345678900
+                Responsável: Maria Silva
+
+                [Editar] [Excluir]
+            -->
+
+        </section>
+
+        <!-- ÁREA RESERVADA PARA FUTURAS FUNÇÕES -->
+        <section class="future-section">
+
+            <h2>Próximas Funcionalidades</h2>
+
+            <div class="future-card">
+
+                <p>🔒 Matrículas</p>
+
+            </div>
+
+            <div class="future-card">
+
+                <p>🔒 Controle de Presença</p>
+
+            </div>
+
+            <div class="future-card">
+
+                <p>🔒 Reposição de Aula</p>
+
+            </div>
+
+            <div class="future-card">
+
+                <p>🔒 Financeiro</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/alunos.js"></script>
+
+</body>
+
+</html>
