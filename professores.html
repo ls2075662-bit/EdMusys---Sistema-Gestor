@@ -13,7 +13,14 @@
 
 <div class="dashboard">
 
-    
+    <input type="checkbox" id="menuToggle">
+
+    <label for="menuToggle" class="menu-btn">
+        <span class="hamburger"><span></span><span></span><span></span></span>
+        🎵 Educação Musical
+    </label>
+
+    <label for="menuToggle" class="sidebar-overlay"></label>
 
     <aside class="sidebar">
 
@@ -21,7 +28,7 @@
 
         <nav>
             <a href="admin.html">Dashboard</a>
-            <a href="professores.html">Professores</a>
+            <a href="professores.html" class="active">Professores</a>
             <a href="alunos.html">Alunos</a>
             <a href="matriculas.html">Matrículas</a>
         </nav>
@@ -34,7 +41,9 @@
 
     <main class="content">
 
-        <h1>Cadastro de Professores</h1>
+        <header class="topbar">
+            <h1>Cadastro de Professores</h1>
+        </header>
 
         <form id="professorForm" class="form-card">
 
