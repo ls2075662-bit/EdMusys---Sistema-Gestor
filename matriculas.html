@@ -1,61 +1,111 @@
-<main class="content">
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-    <h1>Matrículas</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrículas - Educação Musical</title>
 
-    <form id="matriculaForm" class="form-card">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-        <label>Aluno</label>
+<body>
 
-        <select id="alunoSelect">
-        </select>
+<div class="dashboard">
 
-        <label>Professor</label>
+    <input type="checkbox" id="menuToggle">
 
-        <select id="professorSelect">
-        </select>
+    <label for="menuToggle" class="menu-btn">
+        <span class="hamburger"><span></span><span></span><span></span></span>
+        🎵 Educação Musical
+    </label>
 
-        <label>Instrumento</label>
+    <label for="menuToggle" class="sidebar-overlay"></label>
 
-        <select id="instrumentoSelect">
-        </select>
+    <aside class="sidebar">
 
-        <label>Horários</label>
+        <h2>🎵 Educação Musical</h2>
 
-        <select id="horarioSelect">
-        </select>
+        <nav>
+            <a href="admin.html">Dashboard</a>
+            <a href="professores.html">Professores</a>
+            <a href="alunos.html">Alunos</a>
+            <a href="matriculas.html" class="active">Matrículas</a>
+        </nav>
 
-        <button
-        type="button"
-        id="addHorarioMatricula">
-
-            Adicionar Horário
-
+        <button onclick="window.location.href='admin.html'">
+        ← Voltar ao Dashboard
         </button>
 
-        <div id="horariosSelecionados">
+    </aside>
+
+    <main class="content">
+
+        <header class="topbar">
+            <h1>Matrículas</h1>
+        </header>
+
+        <form id="matriculaForm" class="form-card">
+
+            <label>Aluno</label>
+
+            <select id="alunoSelect">
+            </select>
+
+            <label>Professor</label>
+
+            <select id="professorSelect">
+            </select>
+
+            <label>Instrumento</label>
+
+            <select id="instrumentoSelect">
+            </select>
+
+            <label>Horários</label>
+
+            <select id="horarioSelect">
+            </select>
+
+            <button
+            type="button"
+            id="addHorarioMatricula">
+
+                Adicionar Horário
+
+            </button>
+
+            <div id="horariosSelecionados">
+            </div>
+
+            <h3>
+                Valor Mensal:
+                R$
+                <span id="valorMensal">
+                    0
+                </span>
+            </h3>
+
+            <button type="submit">
+
+                Salvar Matrícula
+
+            </button>
+
+        </form>
+
+        <hr>
+
+        <h2>Matrículas Ativas</h2>
+
+        <div id="listaMatriculas">
         </div>
 
-        <h3>
-            Valor Mensal:
-            R$
-            <span id="valorMensal">
-                0
-            </span>
-        </h3>
+    </main>
 
-        <button type="submit">
+</div>
 
-            Salvar Matrícula
+<script src="js/matriculas.js"></script>
 
-        </button>
-
-    </form>
-
-    <hr>
-
-    <h2>Matrículas Ativas</h2>
-
-    <div id="listaMatriculas">
-    </div>
-
-</main>
+</body>
+</html>

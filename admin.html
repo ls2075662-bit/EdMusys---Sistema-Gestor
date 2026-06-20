@@ -14,13 +14,23 @@
 
 <div class="dashboard">
 
+    <!-- controla o menu mobile via CSS, sem precisar de JS -->
+    <input type="checkbox" id="menuToggle">
+
+    <label for="menuToggle" class="menu-btn">
+        <span class="hamburger"><span></span><span></span><span></span></span>
+        🎵 Educação Musical
+    </label>
+
+    <label for="menuToggle" class="sidebar-overlay"></label>
+
     <aside class="sidebar">
 
         <h2>🎵 Educação Musical</h2>
 
         <nav>
 
-            <a href="admin.html">Dashboard</a>
+            <a href="admin.html" class="active">Dashboard</a>
 
             <a href="professores.html">Professores</a>
 
