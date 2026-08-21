@@ -185,19 +185,19 @@
 
 <body>
 
-  <main class="cadastro-card">
+  <main class="cadastro-card"> <!-- caixa de cadastro usuario-->
 
     <header class="cadastro-header">
       <div class="logo"></div>
 
       <h1>EdMusys</h1>
-      <p>CADASTRO DE USUÁRIO</p>
+      <p>CADASTRAR ADMINISTRADOR</p>
     </header>
 
     <form id="formCadastro">
 
       <div class="form-group">
-        <label for="nome">NOME DE USUÁRIO COMPLETO</label>
+        <label for="nome">NOME COMPLETO</label>
 
         <div class="input-wrapper">
           <span class="input-icon">♙</span>
@@ -276,7 +276,7 @@
       Voltar para o login
     </button>
 
-  </main>
+  </main> <!-- tad fecha caixa de cadastro usuario-->
 
   <script>
     const form = document.getElementById("formCadastro");
@@ -290,23 +290,72 @@
       mensagem.className = "mensagem";
       mensagem.textContent = "";
 
-      if (senha.value.length < 6) {
-        mensagem.textContent = "A senha deve possuir pelo menos 6 caracteres.";
+      const nome = document.getElementById("nome").value.trim();
+      const email = document.getElementById("email").value.trim().toLowerCase();
+      const senhaValor = senha.value;
+      const confirmarSenhaValor = confirmarSenha.value;
+
+      //verifica o tamanho da senha
+      if (senha.value.length < 8) {
+        mensagem.textContent = "A senha deve possuir pelo menos 8 caracteres.";
         mensagem.classList.add("erro");
         return;
       }
 
+      //verifica se as senhas são iguais
       if (senha.value !== confirmarSenha.value) {
         mensagem.textContent = "As senhas não são iguais.";
         mensagem.classList.add("erro");
         return;
       }
 
+      // 3. Recupera os administradores já cadastrados
+    const administradores =
+        JSON.parse(localStorage.getItem("edmusys_admins")) || [];
+
+        // 4. Verifica se o e-mail já está cadastrado
+    const emailExiste = administradores.some(
+        admin => admin.email === email
+    );
+
+    if (emailExiste) {
+        mensagem.textContent =
+            "Este e-mail já está cadastrado.";
+
+        mensagem.classList.add("erro");
+        return;
+    }
+
+    // 5. Cria o novo administrador
+    const novoAdministrador = {
+        nome: nome,
+        email: email,
+        senha: senhaValor
+    };
+
+    // 6. Adiciona o administrador à lista
+    administradores.push(novoAdministrador);
+
+    // 7. Salva novamente no navegador
+    localStorage.setItem(
+        "edmusys_admins",
+        JSON.stringify(administradores)
+    );
+
+
       mensagem.textContent = "Usuário cadastrado com sucesso!";
       mensagem.classList.add("sucesso");
 
+      //limpa formulário
       form.reset();
+
+      // 10. Depois de 1 segundo, volta para o login
+    setTimeout(function() {
+        window.location.href = "index.html";
+    }, 1000);
     });
+
+
   </script>
 
 </body>
