@@ -110,26 +110,85 @@ function ifield({id, label, icon, type='text', value='', placeholder='', dark=fa
    ============================================================ */
 const loginUser = $('#login-user');
 const loginPass = $('#login-pass');
-[loginUser, loginPass].forEach(inp=>{
-  inp.addEventListener('input', ()=>{
-    const clean = inp.value.replace(/\s/g,'');
-    if(clean !== inp.value){ inp.value = clean; }
+
+[loginUser, loginPass].forEach(inp => {
+  inp.addEventListener('input', () => {
+    const clean = inp.value.replace(/\s/g, '');
+
+    if (clean !== inp.value) {
+      inp.value = clean;
+    }
   });
 });
-$('#login-form').addEventListener('submit', e=>{
+
+$('#login-form').addEventListener('submit', e => {
+
   e.preventDefault();
-  const u = loginUser.value.trim(), p = loginPass.value.trim();
+
+  const u = loginUser.value.trim().toLowerCase();
+  const p = loginPass.value.trim();
+
   const err = $('#login-error');
-  if(u.toLowerCase()==='admin' && p==='admin'){
+
+
+  // ==========================================================
+  // LOGIN PADRÃO DO SISTEMA
+  // Usuário: admin
+  // Senha: admin
+  // ==========================================================
+
+  const loginPadrao =
+    u === 'admin' && p === 'admin';
+
+
+  // ==========================================================
+  // BUSCAR ADMINISTRADORES CADASTRADOS
+  // ==========================================================
+
+  const administradores =
+    JSON.parse(localStorage.getItem('edmusys_admins')) || [];
+
+
+  // ==========================================================
+  // VERIFICAR ADMINISTRADOR CADASTRADO
+  // ==========================================================
+
+  const administradorCadastrado =
+    administradores.some(admin =>
+      admin.email === u &&
+      admin.senha === p
+    );
+
+
+  // ==========================================================
+  // VALIDAR LOGIN
+  // ==========================================================
+
+  if (loginPadrao || administradorCadastrado) {
+
+    // Login correto
     err.classList.remove('show');
+
+    // Esconde tela de login
     $('#login-screen').classList.add('hidden');
+
+    // Mostra o sistema
     $('#app').classList.remove('hidden');
+
+    // Mostra calendário
     $('#fab-calendar').classList.remove('hidden');
+
+    // Carrega página inicial
     renderView();
+
   } else {
+
+    // Login incorreto
     err.classList.add('show');
+
   }
-});
+
+})//atualizacao daqui pra cima//alreracoes daqui pra cima
 
 /* ============================================================
    NAV
